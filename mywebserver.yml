@@ -14,3 +14,15 @@
       name: apache2
       state: restarted
     when: ansible_os_family =="Debian"
+
+  - name: i want to install webserver on redhat nodes
+    yum:
+     name: httpd
+     state: present
+    when: ansible_os_family =="redhat"  
+
+  - name: i want to start a webserver
+    service:
+       name: httpd
+       state: started
+
