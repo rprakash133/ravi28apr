@@ -4,8 +4,8 @@
    tasks:
    - name: i want to install apache2
      apt:
-      name: apache2
-      state: present
+       name: apache2
+       state: present
 
    - name: i want to start apache2
      service:
