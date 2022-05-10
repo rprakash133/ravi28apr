@@ -23,6 +23,7 @@
 
   - name: i want to start a webserver
     service:
-       name: httpd
-       state: started
+      name: httpd
+      state: started
+    when: ansible_os_family =="redhat" 
 
