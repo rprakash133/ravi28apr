@@ -2,8 +2,9 @@
 - hosts: 172.31.28.200
   become: yes
   tasks:
-  - name : i want to create a file
-    file:
-     path: /home/ubuntu/mytestfile
-     state: touch
-     
+  - include_tasks: myfiles.yml
+  - name: i want to install webserver
+    apt:
+     name: apache2
+     state: present
+
