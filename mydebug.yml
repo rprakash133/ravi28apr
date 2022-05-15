@@ -19,5 +19,5 @@
     apt:
      name: tree
      state: present
-    when: my result.stderr !=""
+    when: myresult.stderr !=""
 
