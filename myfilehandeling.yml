@@ -5,8 +5,8 @@
   - include_tasks: myfiles.yml
   - name: i want to install webserver
     apt:
-     name: apache2
-     state: present
+      name: apache2
+      state: present
     notity: restartwebserver
 
   - name: i want to copy static files into ansible nodes side
