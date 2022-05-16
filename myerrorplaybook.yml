@@ -16,3 +16,8 @@
     apt:
      name: wget
      state: present
+
+  - name: i want to create a folder
+    file:
+     path: /home/ubuntu
+     state: directory
