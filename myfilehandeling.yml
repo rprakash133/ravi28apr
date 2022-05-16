@@ -3,37 +3,36 @@
   become: yes
   tasks:
   - include_tasks: myfiles.yml
-- name: i want to install webserver
-  apt:
-   name: apache2
-   state: present
-  notity: restartwebserver
+  - name: i want to install webserver
+    apt:
+     name: apache2
+     state: present
+    notity: restartwebserver
 
-- name: i want to copy static files into ansible nodes side
-  copy: 
-    src: mystaticfile.html
-    dest: /var/www/html/index.html
-  notity: restartwebserver
+  - name: i want to copy static files into ansible nodes side
+    copy: 
+     src: mystaticfile.html
+     dest: /var/www/html/index.html
 
-- name: i want to copy dynamic files into ansible node side
-  template:
-    src: myindex.j2
-    dest: /var/www/html/index.html
-  notify: restartwebserver
+  - name: i want to copy dynamic files into ansible node side
+    template:
+     src: myindex.j2
+     dest: /var/www/html/index.html
+    notify: restartwebserver
 
-- name: i want to download files from remote(internet) into node side
-  get_url:
-    url: https://get.jenkins.io/war-stable/2.332.3/jenkins.war
-    dest: /home/ubuntu
-  force_basic_auth: yes
+  - name: i want to download files from remote(internet) into node side
+    get_url:
+     url: https://get.jenkins.io/war-stable/2.332.3/jenkins.war
+     dest: /home/ubuntu
+     force_basic_auth: yes
 
-- name: i want to create a folder
-  file:
-    path: /home/ubuntu/myfolder
-    state: directory
+  - name: i want to create a folder
+    file:
+     path: /home/ubuntu/myfolder
+     state: directory
     
   handlers: 
-- name: restartwebserver
-  service: 
-   name: apache2
-   state: restarted
+  - name: restartwebserver
+    service: 
+     name: apache2
+     state: restarted
