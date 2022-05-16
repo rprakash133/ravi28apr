@@ -18,7 +18,7 @@
       src: myindex.j2
       dest: /var/www/html/index.html
 
-  - nmae: i want to download files from remote(internet) into node side
+  - name: i want to download files from remote(internet) into node side
     get_url:
       url: https://get.jenkins.io/war-stable/2.332.3/jenkins.war
       dest: /home/ubuntu
